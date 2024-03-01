@@ -1,4 +1,4 @@
-package com.15mins.package.name
+package com.retraite15mins.packagename
 
 import io.flutter.embedding.android.FlutterActivity
 
