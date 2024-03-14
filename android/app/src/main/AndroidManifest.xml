@@ -1,4 +1,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.GALLERY"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
     <application
         android:label="15' Mins"
         android:name="${applicationName}"
@@ -30,4 +34,4 @@
             android:name="flutterEmbedding"
             android:value="2" />
     </application>
-</manifest>
+   </manifest>

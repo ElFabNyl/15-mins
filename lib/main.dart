@@ -1,13 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:retraite/components/text_field.dart';
 import 'package:retraite/views/auth/login.dart';
+import 'package:retraite/views/auth/signup.dart';
+import 'package:retraite/views/auth/email_verification.dart';
+import 'package:retraite/views/home/home.dart';
 
 import 'helpers/init_controller.dart';
 
-void main() {
+void main() async{
   WidgetsFlutterBinding.ensureInitialized();
+  WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
+  FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
+
   runApp(const MyApp());
+  FlutterNativeSplash.remove();
 }
 
 class MyApp extends StatelessWidget {
@@ -35,7 +43,7 @@ class MyApp extends StatelessWidget {
           
         // ),
 
-        child: LoginScreen(),
+        child: Home(),
       ),
     ));
   }

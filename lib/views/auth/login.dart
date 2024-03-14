@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:retraite/components/text_field.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+
+import '../../components/elevated_button.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
@@ -7,6 +10,7 @@ class LoginScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       body: SafeArea(
         child: SingleChildScrollView(
           child: Padding(
@@ -14,17 +18,21 @@ class LoginScreen extends StatelessWidget {
                 const EdgeInsets.symmetric(horizontal: 15.0, vertical: 50.0),
             child: Column(
               children: [
-                const Padding(
-                  padding: EdgeInsets.symmetric(vertical: 20.0),
-                  child: Text(
-                    'Authentification',
-                    style:
-                        TextStyle(fontSize: 18.0, fontWeight: FontWeight.w500),
+                Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 20.0),
+                  child: SizedBox(
+                    height: 150,
+                    width: double.infinity,
+                    child: Image.asset(
+                      "assets/images/15'mins.png",
+                     fit: BoxFit.cover,
+                    ),
                   ),
                 ),
-                const SizedBox(height: 16.0),
                 ElevatedButton(
-                  onPressed: () async {},
+                  onPressed: () async {
+                    //
+                  },
                   style: ButtonStyle(
                     padding: MaterialStateProperty.all<EdgeInsetsGeometry>(
                       const EdgeInsets.all(15),
@@ -39,10 +47,12 @@ class LoginScreen extends StatelessWidget {
                       const Color(0xffECF1FE),
                     ),
                   ),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      const Padding(
+                  child: const Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children:  [
+                      
+                      FaIcon(FontAwesomeIcons.google, size: 35,),
+                       Padding(
                         padding: EdgeInsets.all(12.0),
                         child: Text(
                           'Connect with Google',
@@ -54,9 +64,9 @@ class LoginScreen extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(height: 10.0),
-                Row(
+                const Row(
                   mainAxisAlignment: MainAxisAlignment.center,
-                  children: const [
+                  children:  [
                     Text(
                       '----------- or -----------',
                       style: TextStyle(color: Colors.grey),
@@ -67,11 +77,15 @@ class LoginScreen extends StatelessWidget {
                 InputFormFieldWidget(
                   isEmailInput: true,
                   isnumberInput: false,
-                  onChanged: (inputEmail) {},
-                  checkInput: (value) {},
+                  onChanged: (inputEmail) {
+                    //
+                  },
+                  checkInput: (value) {
+                    //
+                  },
                   prefixIcon: const Icon(
                     Icons.email,
-                    color: Colors.grey,
+                    color: Color.fromARGB(255, 58, 25, 64),
                   ),
                   hintText: 'Email address',
                 ),
@@ -79,7 +93,9 @@ class LoginScreen extends StatelessWidget {
                 InputFormFieldWidget(
                   isnumberInput: false,
                   isEmailInput: false,
-                  onChanged: (inputPwd) {},
+                  onChanged: (inputPwd) {
+                    //
+                  },
                   checkInput: (value) {
                     if (value == null || value.isEmpty) {
                       return 'Incorrect input';
@@ -90,14 +106,16 @@ class LoginScreen extends StatelessWidget {
                   },
                   prefixIcon: const Icon(
                     Icons.lock,
-                    color: Colors.grey,
+                    color: Color.fromARGB(255, 58, 25, 64),
                   ),
                   hintText: 'Password',
                   suffixIcon: IconButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        //
+                      },
                       icon: const Icon(
                         Icons.remove_red_eye,
-                        color: Colors.grey,
+                        color: Color.fromARGB(255, 58, 25, 64),
                       )),
                 ),
                 Row(
@@ -108,23 +126,23 @@ class LoginScreen extends StatelessWidget {
                       child: const Text(
                         'Forgot password?',
                         style: TextStyle(
-                            color: Color(0xff1960CC),
+                            color: Colors.grey,
                             fontWeight: FontWeight.w500),
                       ),
                     )
                   ],
                 ),
                 const SizedBox(height: 10.0),
-                // DefaultElevatedButton(
-                //     text: const Text(
-                //       'Sign in',
-                //       style: TextStyle(fontSize: 17.0),
-                //     ),
-                //     showArrowBack: false,
-                //     showArrowFoward: false,
-                //     onPressed: () async {
+                DefaultElevatedButton(
+                  backgroundColor:const  Color.fromARGB(255, 58, 25, 64),
+                    text: const Text(
+                      'Sign in',
+                      style: TextStyle(fontSize: 17.0, color: Colors.white, fontWeight: FontWeight.w300),
+                    ),
 
-                //     }),
+                    onPressed: () async {
+
+                    }),
                 const SizedBox(height: 15.0),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -138,7 +156,7 @@ class LoginScreen extends StatelessWidget {
                       child: const Text(
                         'Signup',
                         style: TextStyle(
-                          color: Color(0xff1960CC),
+                          color: Color.fromARGB(255, 58, 25, 64),
                         ),
                       ),
                     )
