@@ -24,11 +24,7 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
   
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.white,
-        foregroundColor: Colors.white,
-       
-      ),
+   
       backgroundColor: Colors.white,
       body: screens[_bottomNavIndex], 
       floatingActionButton: FloatingActionButton(
@@ -60,7 +56,6 @@ class _HomeState extends State<Home> {
         leftCornerRadius: 35,
         rightCornerRadius: 35,
         onTap: (index) => setState(() => _bottomNavIndex = index),
-        // Ajoutez d'autres paramètres si nécessaire
       ),
     );
   }
