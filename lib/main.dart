@@ -6,6 +6,7 @@ import 'package:retraite/views/auth/login.dart';
 import 'package:retraite/views/auth/signup.dart';
 import 'package:retraite/views/auth/email_verification.dart';
 import 'package:retraite/views/home/home.dart';
+import 'package:retraite/views/prayer/prayer.dart';
 
 import 'helpers/init_controller.dart';
 
@@ -43,7 +44,7 @@ class MyApp extends StatelessWidget {
           
         // ),
 
-        child: Home(),
+        child: PrayerScreen(),
       ),
     ));
   }
