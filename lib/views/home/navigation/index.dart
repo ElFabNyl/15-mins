@@ -4,14 +4,14 @@ import 'package:get/get.dart';
 import 'package:lottie/lottie.dart';
 import 'package:retraite/views/home/bar%20graph/bar_data.dart';
 
-import '../../../controllers/weekStatsCtrl.dart';
+import '../../../controllers/prayerStatistics.dart';
 
 class IndexScreen extends StatelessWidget {
   const IndexScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    WeeklyStatisticsController weekCtrl = Get.find();
+    PrayerStatisticsCtrl weekCtrl = Get.find();
 
     BarData myBarData = BarData(
         sunAmount: weekCtrl.weeklyPrayerStas[0],
@@ -30,35 +30,54 @@ class IndexScreen extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const Row(children: [
-                CircleAvatar(
-                  radius: 25.0,
-                  backgroundColor: Color.fromARGB(255, 58, 25, 64),
-                  child: Text(
-                    "NF",
-                    style: TextStyle(
-                        color: Colors.white, fontWeight: FontWeight.w900),
-                  ),
-                ),
-                SizedBox(width: 5.0),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      "Welcome",
-                      style: TextStyle(
-                          fontSize: 16.0,
-                          fontWeight: FontWeight.w400,
-                          color: Colors.black54),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  const Row(children: [
+                    CircleAvatar(
+                      radius: 25.0,
+                      backgroundColor: Color.fromARGB(255, 58, 25, 64),
+                      child: Text(
+                        "NF",
+                        style: TextStyle(
+                            color: Colors.white, fontWeight: FontWeight.w900),
+                      ),
                     ),
-                    Text(
-                      "Nyl Fabrice",
-                      style: TextStyle(
-                          fontSize: 16.0, fontWeight: FontWeight.w600),
+                    SizedBox(width: 5.0),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          "Welcome",
+                          style: TextStyle(
+                              fontSize: 16.0,
+                              fontWeight: FontWeight.w400,
+                              color: Colors.black54),
+                        ),
+                        Text(
+                          "Nyl Fabrice",
+                          style: TextStyle(
+                              fontSize: 16.0, fontWeight: FontWeight.w600),
+                        )
+                      ],
                     )
-                  ],
-                )
-              ]),
+                  ]),
+
+                  GestureDetector(
+                    onTap: (){
+                      //
+                    },
+                    child: const Padding(
+                      padding:  EdgeInsets.only(right: 15.0),
+                      child:  Badge(
+                        isLabelVisible: true,
+                        label: Text("200", style: TextStyle(color: Colors.white, fontWeight: FontWeight.w900),),
+                        child: Icon(Icons.notifications),
+                      ),
+                    ),
+                  )
+                ],
+              ),
               const SizedBox(height: 30.0),
               const Text(
                 "Weekly Statistics",

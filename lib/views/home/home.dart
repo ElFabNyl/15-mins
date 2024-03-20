@@ -1,6 +1,9 @@
 import 'package:animated_bottom_navigation_bar/animated_bottom_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:retraite/views/home/navigation/index.dart';
+import 'package:retraite/views/home/navigation/notification.dart';
+import 'package:retraite/views/home/navigation/profile.dart';
+import 'package:retraite/views/home/navigation/summary.dart';
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
@@ -13,15 +16,15 @@ class _HomeState extends State<Home> {
   int _bottomNavIndex = 0;
   List<IconData> iconList = [
     Icons.home,
-    Icons.search,
+    Icons.notifications,
     Icons.favorite,
     Icons.person
   ];
   List<Widget> screens = [
     const IndexScreen(),
-    Container(color: Colors.green),
-    Container(color: Colors.red),
-    Container(color: Colors.yellow),
+    const NotificationsScreen(),
+    const SummaryScreen(),
+    const ProfileScreen()
   ];
 
   @override

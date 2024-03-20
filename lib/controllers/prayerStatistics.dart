@@ -1,6 +1,6 @@
 import 'package:get/get.dart';
 
-class WeeklyStatisticsController extends GetxController {
+class PrayerStatisticsCtrl extends GetxController {
   var mondayVolume = 4.40.obs;
   var tuesdayVolume = 2.50.obs;
   var wednesdayVolume = 42.42.obs;
@@ -12,7 +12,7 @@ class WeeklyStatisticsController extends GetxController {
 // Initialize weeklyPrayerStas within the constructor
   List<double> weeklyPrayerStas = [];
 
-  WeeklyStatisticsController() {
+  PrayerStatisticsCtrl() {
     updateWeeklyPrayerStas();
   }
 
@@ -27,4 +27,7 @@ class WeeklyStatisticsController extends GetxController {
       saturdayVolume.value,
     ];
   }
+
+
+  
 }

@@ -9,6 +9,7 @@ import 'package:retraite/views/home/home.dart';
 import 'package:retraite/views/prayer/prayer.dart';
 
 import 'helpers/init_controller.dart';
+import 'views/onboarding/onboarding.dart';
 
 void main() async{
   WidgetsFlutterBinding.ensureInitialized();
@@ -44,7 +45,7 @@ class MyApp extends StatelessWidget {
           
         // ),
 
-        child: PrayerScreen(),
+        child: OnboardingScreen(),
       ),
     ));
   }
